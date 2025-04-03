@@ -5,7 +5,7 @@ services:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost"]
     ports:
-      - "8080:80"
+      - "${WORDPRESS_PORT:?check .env.dist}:80"
     env_file:
       - .env
     environment:
@@ -34,7 +34,7 @@ services:
       test: ["CMD", "curl", "-f", "http://localhost"]
     restart: always
     ports:
-      - "8081:80"
+      - "${PHPMYADMIN_PORT:?check .env.dist}:80"
     environment:
       PMA_HOST: db
       PMA_USER: ${MARIADB_USER:?check .env.dist}
