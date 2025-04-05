@@ -1,15 +1,17 @@
-# Cairns Wordpress
+# Wordpress compose
 
-Le CAIRNS est une association Savernoise d'escalade. Ceci est le petit script pour lancer le site web via docker. Rien de très compliqué !
+This is a simple project to deploy Wordpress with Docker.
 
-À bientôt sur les voies de grès rose.
+* This Wordpress configuration is meant to run on HTTPS only, please consider using Let's encrypt to get a free SSL certificate.
+* This setup rely on docker volumes to persist data, don't forget to backup your volumes on a regular basis.
 
 ## Setup
 
 ### Requirements
 
 - Docker
-- Docker-compose
+
+> Disclaimer: always use `docker compose` rather than `docker-compose`
 
 ### Setup
 
@@ -23,7 +25,7 @@ docker-compose up -d
 ### Access
 
 ```bash
-docker-compose exec cairns-wordpress bash
+docker-compose exec wordpress-compose bash
 ```
 
 ### Update
